@@ -23,4 +23,13 @@ public class LogicalPrograms {
         if (n == sum)
             System.out.println(n + " is a perfect number");
     }
+    public void reverseNumber(int n){
+        int temp=0,rev=0;
+        while(n>0){
+            temp=n%10;
+            n/=10;
+            rev=rev*10+temp;
+        }
+        System.out.println("The reverse of is "+ rev);
+    }
 }
