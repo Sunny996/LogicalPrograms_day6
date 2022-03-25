@@ -13,7 +13,5 @@ public class LogicalPrograms {
             second=temp;
             System.out.println(temp);
         }
-
-
     }
 }
