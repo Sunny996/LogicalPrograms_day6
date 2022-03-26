@@ -1,7 +1,10 @@
 package main;
 
+import java.time.Duration;
+import java.time.Instant;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Scanner;
 
 public class LogicalPrograms {
     public void fibonacci(int n) {
@@ -52,11 +55,29 @@ public class LogicalPrograms {
                 arr[a] = randomNumber;
                 a++;
                 count++;
-            }
-            else if(flag)
+            } else if (flag)
                 count++;
         }
         System.out.println("Total random Number needed " + count);
         return arr;
+    }
+
+    public void stopWatch() {
+        System.out.println("Type A to start the program");
+        Scanner sc = new Scanner(System.in);
+        Instant start, end;
+        char ch = sc.next().charAt(0);
+        int time;
+        if (ch == 'A' || ch == 'a') {
+            start = Instant.now();
+            System.out.println("Type B to stop the program");
+            char c = sc.next().charAt(0);
+            if (c == 'B' || c == 'b') {
+                end = Instant.now();
+                long timeElapsed = Duration.between(start, end).toMillis();
+                System.out.println("Time Elapsed "+timeElapsed+ " ms");
+            }
+        }
+
     }
 }
